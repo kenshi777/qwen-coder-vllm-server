@@ -31,7 +31,9 @@ jobs:
       - name: Build & push image
         uses: docker/build-push-action@v5
         with:
+          context: .
+          file: ./docker/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/qwen-1.7b-coder-vllm:latest
-            ghcr.io/${{ github.repository_owner }}/qwen-1.7b-coder-vllm:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/qwen-bnb4:latest
+            ghcr.io/${{ github.repository_owner }}/qwen-bnb4:${{ github.sha }}
