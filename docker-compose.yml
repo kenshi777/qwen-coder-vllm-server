@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  qwen-vllm:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: qwen-1.7b-coder-4bit-vllm:local
+    runtime: nvidia  # requires nvidia‑container‑toolkit
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "8000:8000"
