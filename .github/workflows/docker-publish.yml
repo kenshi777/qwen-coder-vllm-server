@@ -42,8 +42,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: ./docker/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/qwen-1.7b-coder-4bit:latest
-            ghcr.io/${{ github.repository_owner }}/qwen-1.7b-coder-4bit:${{ steps.version.outputs.value }}
+            ghcr.io/${{ github.repository_owner }}/qwen-bnb4:latest
+            ghcr.io/${{ github.repository_owner }}/qwen-bnb4:${{ github.sha }}
