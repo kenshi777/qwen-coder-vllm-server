@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: chartboost/ruff-action@v1
+      - uses: astral-sh/ruff-action@v3
         with:
-          args: --output-format=github .
+          args: "format --check --diff"
 
   docker-lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: hadolint/hadolint-action@v2
+      - uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Dockerfile
