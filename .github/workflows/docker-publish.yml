@@ -6,7 +6,9 @@ on:
       image_tag:
         description: "Custom image tag (default: commit SHA)"
         required: false
-
+  push:
+    tags: ["v*.*.*"]
+    
 jobs:
   publish:
     runs-on: ubuntu-latest
