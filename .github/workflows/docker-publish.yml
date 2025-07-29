@@ -8,7 +8,7 @@ on:
         required: false
   push:
     tags: ["v*.*.*"]
-
+    
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -45,5 +45,5 @@ jobs:
           file: ./docker/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/qwen-bnb4:latest
-            ghcr.io/${{ github.repository_owner }}/qwen-bnb4:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/qwen‑1.7b‑coder-4bit:latest
+            ghcr.io/${{ github.repository_owner }}/qwen‑1.7b‑coder-4bit:${{ github.sha }}
