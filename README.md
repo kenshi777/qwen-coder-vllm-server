@@ -24,7 +24,7 @@ cd qwen-coder-vllm-server
 
 python quantize.py
 ```
-The script pushes a repo `your‑name/qwen‑1.7b‑coder‑4bit` to the Hub.
+The script pushes a repo `kenshi777/qwen‑1.7b‑coder‑4bit` to the Hub.
 
 ### 2. Build & run
 
