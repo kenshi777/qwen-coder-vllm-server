@@ -1,0 +1,23 @@
+name: Lint
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+
+jobs:
+  python-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: chartboost/ruff-action@v1
+        with:
+          args: --output-format=github .
+
+  docker-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hadolint/hadolint-action@v2
+        with:
+          dockerfile: Dockerfile
